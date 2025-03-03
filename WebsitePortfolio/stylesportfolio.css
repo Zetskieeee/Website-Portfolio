@@ -1,0 +1,292 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+/* Dropdown Content (Initially Hidden) */
+.dropdown-content {
+    max-height: 0; /* Start at 0 height */
+    overflow: hidden; /* Hides content when closed */
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    padding: 0 15px; /* No padding when closed */
+    background: #f4f4f4;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* When dropdown is active */
+.dropdown-content.active {
+    max-height: 500px; /* Limit max height */
+    padding: 15px;
+    overflow-y: auto; /* Enables scrolling when content exceeds height */
+}
+
+/* Ensure Dropdown Content has Uniform Sizing */
+.dropdown-content {
+    max-width: 90%; /* Ensure container doesn't affect image width */
+    text-align: center;
+}
+
+/* Force Images to Have a Uniform Size */
+.dropdown-content img {
+    width: 600px !important; /* Set a fixed width */
+    max-width: 90%; /* Ensure it adapts to smaller screens */
+    height: 400px !important; /* Set a uniform height */
+    object-fit: contain; /* Ensures full image is visible */
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Clickable title for dropdown */
+.dropdown-title {
+    cursor: pointer;
+    padding: 10px;
+    background: #1B263B;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.dropdown-title:hover {
+    background: #415A77;
+}
+
+
+/* Wrapper to enforce full screen height */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Main container (Sidebar + Content) */
+.container {
+    display: flex;
+    flex: 1; /* Fills available space */
+    width: 100%;
+}
+
+/* Unified Gradient Background */
+.gradient-bg {
+    background: linear-gradient(to bottom, #0D1B2A, #1B263B, #415A77);
+}
+
+/* Sidebar (Left Section) */
+.sidebar {
+    width: 25%;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Makes sidebar stretch full height */
+    background: linear-gradient(to bottom, #0D1B2A, #1B263B, #415A77);
+}
+
+/* Placeholder for the photo */
+.photo-placeholder {
+    width: 150px;
+    height: 150px;
+    background: gray;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Navigation Bar Styling */
+nav {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: linear-gradient(to right, #0D1B2A, #1B263B, #415A77);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background 0.3s;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background: #444;
+}
+
+/* Content (Right Section) */
+.content {
+    width: 75%;
+    padding: 100px 40px 60px; /* Adjusted padding to create more spacing */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh; /* Makes content stretch full height */
+    overflow-y: auto; /* Enables scrolling if content overflows */
+}
+
+/* Ensures sections take full width and have adequate spacing */
+#about, #projects, #contact, #certifications {
+    width: 100%;
+    margin-bottom: 40px; /* Increased margin to reduce compactness */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Projects Styling */
+.project {
+    background: #1B263B;
+    padding: 20px;
+    margin-top: 20px; /* Increased margin for more spacing */
+    border-radius: 5px;
+}
+
+.certifications {
+    background: #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 200px; /* Set a fixed height for all certification sections */
+    overflow: hidden; /* Prevents extra content from affecting layout */
+}
+
+/* Ensure text takes equal space */
+.certifications div {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Fixed size for certification images */
+.certifications img {
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Keeps the image properly cropped */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1B263B;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #415A77;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Increased space between buttons */
+    margin-top: 20px;
+}
+
+.image-button {
+    width: 60px; /* Adjusted size */
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+    margin: 5px; /* Adds extra spacing */
+}
+
+.image-button:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Footer Stays at Bottom */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to bottom, #0D1B2A, #1B263B, #415A77);
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    .content {
+        width: 100%;
+        padding: 120px 20px 40px; /* Adjusted padding for better spacing */
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .certifications {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .certifications img {
+        width: 100%; /* Make the image responsive */
+        max-width: 250px; /* Prevent it from becoming too large */
+    }
+}
